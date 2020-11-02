@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <title>때호링 편안하게 죽으러 갈 곳</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+
+<body>
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+    
+  <script>
+    console.log("호출전");
+    $.ajax({
+      method: "GET",
+      url: "http://openapi.seoul.go.kr:8088/41486146756a6165373166626d6177/json/WPOSInformationTime/1/3/",
+      success: function(response) {
+        alert("data");
+      }
+    })
+      .done(function (msg){
+        console.log(msg.WPOSInformationTime.row[0].SITE_ID);
+        console.log(msg.WPOSInformationTime.row[1].SITE_ID);
+        console.log(msg.WPOSInformationTime.row[2].SITE_ID);
+      });
+
+      console.log("호출후");
+  </script>
+  
+  <h1>hello</h1>
+</body>
+
+</html>
